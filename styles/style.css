@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --color-fondo: #ffffff;
+    --color-fuente: #000000;
+    --color-titulo: #0a3871;
+    --color-blanco: #ffffff;
+    --color-desencriptar: #d8dfe8;
+
+    --fuente-inter: 'Inter',sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    width: 100%;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido__izquierda__logo {
+    padding: 3% 0% 0% 4%;
+    width: 7%;
+}
+
+.contenido__izquierda {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000000;
+    border-radius: 40px;
+    margin: 1% 2% 2% 2%;
+}
+
+.contenido__izquierda__solicitarTexto {
+    padding: 0% 0% 0% 20%;
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-titulo);
+    border: 2px solid #000000;
+    border-radius: 40px;
+}
+
+.contenido__izquierda__advertencia{
+    padding: 0% 0% 0% 20%;
+}
+
+.contenido__izquierda__botones{
+    padding: 0% 0% 0% 20%;
+    display: flex;
+    gap: 24px;
+    
+}
+
+.boton{
+    border: 2px solid var(--color-titulo);
+    border-radius: 8px;
+    width: 50%;
+}
+.encriptar{
+    background-color: var(--color-titulo);
+    color: var(--color-blanco);
+}
+.desencriptar{
+    background-color: var(--color-desencriptar);
+    color: var(--color-titulo);
+}
+
+.contenido__derecha{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10% 0% 10% 0%;
+    gap: 16px;
+    border: 2px solid #000000;
+    border-radius: 40px;
+    margin: 1% 2% 2% 2%;
+}
+
+.contenido__derecha__img {
+    width: 30%;
+}
+
+.contenido__derecha__texto{
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--fuente-inter);
+}
+
+.contenido__derecha__texto2{
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--fuente-inter);
+}
