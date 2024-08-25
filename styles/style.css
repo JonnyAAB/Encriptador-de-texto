@@ -5,8 +5,11 @@
     --color-titulo: #0a3871;
     --color-blanco: #ffffff;
     --color-desencriptar: #d8dfe8;
+    --color-advertencia: gray;
 
     --fuente-inter: 'Inter',sans-serif;
+
+    --tamano-area: 500px;
 }
 
 * {
@@ -35,21 +38,27 @@ body {
     width: 65%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #000000;
-    border-radius: 40px;
     margin: 1% 2% 2% 2%;
+    gap: 10px;
+    border: 2px solid #000000;
 }
 
-.contenido__izquierda__solicitarTexto {
+.contenido__izquierda__textarea {
     padding: 0% 0% 0% 20%;
+    height: var(--tamano-area);
     font-size: 2rem;
     font-family: var(--fuente-inter);
     color: var(--color-titulo);
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
     border: 2px solid #000000;
-    border-radius: 40px;
 }
 
 .contenido__izquierda__advertencia{
+    font-family: var(--fuente-inter);
+    font-size: 0.75rem;
+    color: var(--color-advertencia);
     padding: 0% 0% 0% 20%;
 }
 
@@ -57,13 +66,19 @@ body {
     padding: 0% 0% 0% 20%;
     display: flex;
     gap: 24px;
-    
 }
 
 .boton{
+    padding: 20px 20px;
     border: 2px solid var(--color-titulo);
-    border-radius: 8px;
+    border-radius: 20px;
     width: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton:hover{
+    opacity: 0.8;
 }
 .encriptar{
     background-color: var(--color-titulo);
@@ -74,20 +89,27 @@ body {
     color: var(--color-titulo);
 }
 
+.copiar{
+    background-color: var(--color-titulo);
+    color: var(--color-blanco);
+    margin-top: 20px;
+    width: 50%; /* Misma anchura que los otros botones */
+    align-self: center; /* Para centrarlo en la sección derecha */
+}
+
 .contenido__derecha{
     width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10% 0% 10% 0%;
-    gap: 16px;
-    border: 2px solid #000000;
-    border-radius: 40px;
+    gap: 8px;
     margin: 1% 2% 2% 2%;
+    border: 2px solid #000000;
 }
 
 .contenido__derecha__img {
-    width: 30%;
+    padding-top: 20%;
+    width: 45%;
 }
 
 .contenido__derecha__texto{
@@ -102,4 +124,15 @@ body {
     text-align: center;
     font-size: 1rem;
     font-family: var(--fuente-inter);
+    padding-bottom: 20%;
+}
+
+.contenido__derecha__resultado{
+    padding-top: 22%;
+    width: 90%;
+    height: var(--tamano-area);
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: var(--fuente-inter);
+    color: var(--color-advertencia);
 }
