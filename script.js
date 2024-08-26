@@ -1,9 +1,10 @@
-//Definiendo variables
-
-let mensajeCodificado;
-
 function encriptarTexto(){
+    //
     var textoSinEncriptar = document.getElementById("textoUsuario").value;
+    if(textoSinEncriptar.trim() === ""){
+        alert("Por favor, ingrese texto para continuar");
+        return;
+    }
     textoSinEncriptar = textoSinEncriptar.replace(/e/g, "enter");
     textoSinEncriptar = textoSinEncriptar.replace(/i/g, "imes");
     textoSinEncriptar = textoSinEncriptar.replace(/a/g, "ai");
@@ -15,6 +16,10 @@ function encriptarTexto(){
 
 function desencriptarTexto(){
     var textoEncriptado = document.getElementById("textoUsuario").value;
+    if(textoEncriptado.trim() === ""){
+        alert("Por favor, ingrese texto para continuar");
+        return;
+    }
     textoEncriptado = textoEncriptado.replace(/enter/g, "e");
     textoEncriptado = textoEncriptado.replace(/imes/g, "i");
     textoEncriptado = textoEncriptado.replace(/ai/g, "a");
@@ -40,10 +45,20 @@ function mostrarResultado(texto){
     botonCopiar.textContent = "Copiar resultado";
     botonCopiar.onclick = function() {
         navigator.clipboard.writeText(texto).then(() => {
-            alert("¡Texto copiado al portapapeles!");
+            mostrarMensajeCopiado();
         }).catch(err => {
             console.error("Error al copiar el texto: ", err);
         });
     };
     seccionDerecha.appendChild(botonCopiar);
+
+    // Crear el elemento para el mensaje de texto copiado
+    var mensajeCopiado = document.createElement("p");
+    mensajeCopiado.classList.add("mensaje__copiado");
+    seccionDerecha.appendChild(mensajeCopiado);
+}
+
+function mostrarMensajeCopiado(){
+    var mensajeCopiado = document.querySelector(".mensaje__copiado");
+    mensajeCopiado.textContent = "¡Texto copiado!";
 }
